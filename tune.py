@@ -3,7 +3,7 @@ from datetime import datetime # importing this to see total program running time
 from pygame import mixer # importing this for playing music and controlling them
 import tkinter.messagebox
 from tkinter import filedialog
-from ttkthemes import themed_tk as tk
+# from ttkthemes import themed_tk as tk
 from tkinter import ttk
 from mutagen.mp3 import MP3
 import os
@@ -11,9 +11,9 @@ import threading
 import time
 start_time=datetime.now()
 
-root=tk.ThemedTk()
-root.get_themes()
-root.set_theme("breeze")
+root=Tk()
+# root.get_themes()
+# root.set_theme("breeze")
 
 menubar= Menu(root)
 root.config(menu=menubar)
@@ -61,7 +61,7 @@ subMenu.add_command(label='How To Use',command= how_to_use)
 mixer.init() # initializing the mixer
 
 root.title('Tune')
-root.iconbitmap(r'images/tune.ico')
+# root.iconbitmap(r'images/tune.ico')
 
 leftframe=Frame(root)
 leftframe.pack(side=LEFT, padx=15, pady=30)
@@ -183,27 +183,27 @@ def mute_music():
 middleframe= Frame(rightframe)
 middleframe.pack(padx=15, pady=15)
 
-play_photo= PhotoImage(file='images/play_btn.png')
+play_photo= PhotoImage(file='images/play.png')
 playBtn=ttk.Button(middleframe, image=play_photo, command= play_music)
 playBtn.grid(row=0, column=0, padx=7)
 
-stop_photo= PhotoImage(file='images/stop_btn.png')
+stop_photo= PhotoImage(file='images/stop.png')
 stopBtn=ttk.Button(middleframe, image=stop_photo, command=stop_music)
 stopBtn.grid(row=0, column=1, padx=7)
 
-pause_photo= PhotoImage(file='images/pause_btn.png')
+pause_photo= PhotoImage(file='images/pause.png')
 pauseBtn=ttk.Button(middleframe, image=pause_photo, command=pause_music)
 pauseBtn.grid(row=0, column=2, padx=7)
 
 bottomframe= Frame(rightframe)
 bottomframe.pack(padx=10,pady=15)
 
-rewind_photo= PhotoImage(file='images/rewind_btn.png')
+rewind_photo= PhotoImage(file='images/rewind.png')
 rewindBtn=ttk.Button(bottomframe, image=rewind_photo, command=rewind_music)
 rewindBtn.grid(row=0, column=0, padx=13, pady=5)
 
-mute_photo= PhotoImage(file='images/mute_btn.png')
-volume_photo= PhotoImage(file='images/volume_btn.png')
+mute_photo= PhotoImage(file='images/mute.png')
+volume_photo= PhotoImage(file='images/volume.png')
 volumeBtn=ttk.Button(bottomframe, image=volume_photo, command=mute_music)
 volumeBtn.grid(row=0, column=1, padx=13, pady=5)
 
